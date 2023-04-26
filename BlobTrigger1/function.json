@@ -1,0 +1,26 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "myblob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "test1/{name}",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "httpOutput",
+      "url": "https://adb-2343612122428095.15.azuredatabricks.net/api/2.0/jobs/run-now",
+      "headers": {
+        "Authorization": "Bearer dapi613143bc826383c2f1ab4eafa93b0260"
+      },
+      "method": "POST",
+      "body": {
+        "job_id": "563840343801354"
+      }
+    }
+  ],
+  "disabled": false
+}
